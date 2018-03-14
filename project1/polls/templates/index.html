@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<div >
+    <form action="" method="post" id="searchBox" onsubmit="appendData(document.getElementById('searchInput').value)">{% csrf_token %}
+        Search Term: <input type="text" id="searchInput" name="search_term"><br>
+        <div>
+            <input type="radio" id="reddit_radio_button" name="engine_selection" value="reddit" onclick="appendFormActionIfEmpty('searchBox', 'reddit_results/');">
+            <label for="reddit_radio_button">Reddit</label>
+            <br>
+            <input type="radio" id="twitter_radio_button" name="engine_selection" value="twitter" onclick="appendFormActionIfEmpty('searchBox', 'twitter_results/');">
+            <label for="twitter_radio_button">Twitter</label>
+            <br>
+            <input type="radio" id="wiki_radio_button" name="engine_selection" value="wiki" onclick="appendFormActionIfEmpty('searchBox', 'wiki_results/');">
+            <label for="twitter_radio_button">Wikipedia</label>
+            <br>
+            <input type="radio" id="imdb_radio_button" name="engine_selection" value="imdb" onclick="appendFormActionIfEmpty('searchBox', 'imdb_results/');">
+            <label for="imdb_radio_button">IMDb</label>
+        </div>
+
+        <input type="submit">
+    </form>
+</div>
+
+</body>
+<script>
+    function checkIfEmptyString(strValue) {
+        if(strValue) {
+            // not null
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function appendFormActionIfEmpty(formID, strValue) {
+        if (checkIfEmptyString(document.getElementById(formID).action)) {
+            document.getElementById(formID).action+=strValue;
+        } else {
+            document.getElementById(formID).action=strValue;
+        }
+    }
+
+    function appendData(input) {
+        // runtime error fix
+        input += '/'
+        document.getElementById('searchBox').action += input;
+    }
+
+</script>
+</html>
