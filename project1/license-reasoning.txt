@@ -1,0 +1,7 @@
+license-reasoning.txt
+
+We chose the Mozilla Public License v2 becasue it is a flexible, permissive, open-source license that is compatible on a file-by-file basis with the GPLv2.
+
+This allows for other projects to include individual modules of our code in their GPLv2 or MOZv2 licensed projects without permission.
+
+This also allows us to rely on a trusted standard (Mozilla) for our legal needs.
