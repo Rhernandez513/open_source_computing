@@ -1,0 +1,95 @@
+
+NAME
+    imdb_interface - # https://github.com/richardasaurus/imdb-pie
+
+DATA
+    imdb = <imdbpie.imdbpie.Imdb object>
+
+FILE
+    c:\users\admin\project1\polls\imdb_interface.py
+
+
+
+
+NAME
+    wikipedia_interface - # https://github.com/martin-majlis/Wikipedia-API
+
+DATA
+    api = <wikipediaapi.wikipedia.Wikipedia object>
+
+FILE
+    c:\users\admin\project1\polls\wikipedia_interface.py
+
+
+
+
+NAME
+    tests
+
+FILE
+    c:\users\admin\project1\polls\tests.py
+
+
+
+
+NAME
+    apps
+
+CLASSES
+    django.apps.config.AppConfig(builtins.object)
+        PollsConfig
+
+    class PollsConfig(django.apps.config.AppConfig)
+     |  Class representing a Django application and its configuration.
+     |
+     |  Method resolution order:
+     |      PollsConfig
+     |      django.apps.config.AppConfig
+     |      builtins.object
+     |
+     |  Data and other attributes defined here:
+     |
+     |  name = 'polls'
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from django.apps.config.AppConfig:
+     |
+     |  __init__(self, app_name, app_module)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  get_model(self, model_name, require_ready=True)
+     |      Return the model with the given case-insensitive model_name.
+     |
+     |      Raise LookupError if no model exists with this name.
+     |
+     |  get_models(self, include_auto_created=False, include_swapped=False)
+     |      Return an iterable of models.
+     |
+     |      By default, the following models aren't included:
+     |
+     |      - auto-created models for many-to-many relations without
+     |        an explicit intermediate table,
+     |      - models that have been swapped out.
+     |
+     |      Set the corresponding keyword argument to True to include such models.
+     |      Keyword arguments aren't documented; they're a private API.
+     |
+     |  import_models(self)
+     |
+     |  ready(self)
+     |      Override this method in subclasses to run code when Django starts.
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from django.apps.config.AppConfig:
+     |
+     |  create(entry) from builtins.type
+     |      Factory that creates an app config from an entry in INSTALLED_APPS.
+-- More  --
+
+
+
+
+
