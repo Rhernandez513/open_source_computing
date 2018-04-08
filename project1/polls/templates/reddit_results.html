@@ -1,3 +1,7 @@
 {% if reddit_response %}
-    {{ reddit_response }}
+    <ul>
+        {% for idv_res in reddit_response %}
+            <li>{{ idv_res }}</li>
+        {% endfor %}
+    </ul>
 {% endif %}

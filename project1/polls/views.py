@@ -28,15 +28,10 @@ def twitter_results(request, question_id):
     return render(request, 'twitter_results.html', context)
 
 def reddit_results(request, question_id):
-    response = ""
     response = []
 
     for idx, val in enumerate(reddit_interface.reddit_api.search(question_id, limit=5)):
-
-
-        response += val.title
-        response += "<br/>"
-        response += "<br/>"
+        response.append(val.title)
 
     context = {
         'reddit_response': response
@@ -47,12 +42,15 @@ def reddit_results(request, question_id):
 def wiki_results(request, question_id):
 
     page = wikipedia_interface.api.page(question_id)
-    page = wikipedia_interface.api.page(question_id)
-    response = ""
-    response += page.text
-    # return HttpResponse("You're voting on question %s." % question_id)
-    return HttpResponse(response)
+    context = {
+        'wiki_response': page.text
+    }
+    return render(request, 'wiki_results.html', context)
 
 def imdb_results(request, question_id):
     result = imdb_interface.imdb.search_for_title(question_id)
-    return HttpResponse(result)
+
+    context = {
+        'result' : result
+    }
+    return render(request, 'imdb_results.html', context)
