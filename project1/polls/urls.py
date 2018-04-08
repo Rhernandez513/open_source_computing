@@ -6,7 +6,7 @@ urlpatterns = [
     # ex: /polls/
     path('', views.index, name='index'),
     # ex: /polls/5/
-    path('twitter_results/<str:question_id>/', views.detail, name='detail'),
+    path('twitter_results/<str:question_id>/', views.twitter_results, name='twitter_results'),
     # ex: /polls/5/results/
     path('reddit_results/<str:question_id>/', views.reddit_results, name='reddit_results'),
     # ex: /polls/5/vote/

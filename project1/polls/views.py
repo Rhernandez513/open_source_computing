@@ -5,36 +5,47 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from . import twitter_interface
+from . import reddit_interface
+from . import wikipedia_interface
+from . import imdb_interface
+
 
 def index(request):
-    response = ""
-
     response = "Hello World, You're looking at the polls index."
-    context = {}
+    context = {
+        'response' : response
+    }
 
     return render(request, 'index.html', context)
-    # return HttpResponse(response)
 
-def detail(request, question_id):
-    # return HttpResponse("You're looking at question %s." % question_id)
-    from . import twitter_interface
-    return HttpResponse(twitter_interface.tweet_api.GetSearch(question_id))
+def twitter_results(request, question_id):
+    twitter_response = twitter_interface.tweet_api.GetSearch(question_id)
+    context = {
+        'twitter_reponse' : twitter_response
+    }
+    # return HttpResponse(twitter_response)
+    return render(request, 'twitter_results.html', context)
 
 def reddit_results(request, question_id):
-    # response = "You're looking at the results of question %s."
-
-    from . import reddit_interface
     response = ""
+    response = []
 
-    for i in reddit_interface.reddit_api.search(question_id, limit=5):
-        response += i.title
+    for idx, val in enumerate(reddit_interface.reddit_api.search(question_id, limit=5)):
+
+
+        response += val.title
         response += "<br/>"
         response += "<br/>"
-    return HttpResponse(response)
+
+    context = {
+        'reddit_response': response
+    }
+    # return HttpResponse(response)
+    return render(request, 'reddit_results.html', context)
 
 def wiki_results(request, question_id):
 
-    from . import wikipedia_interface
     page = wikipedia_interface.api.page(question_id)
     page = wikipedia_interface.api.page(question_id)
     response = ""
@@ -43,6 +54,5 @@ def wiki_results(request, question_id):
     return HttpResponse(response)
 
 def imdb_results(request, question_id):
-    from . import imdb_interface
     result = imdb_interface.imdb.search_for_title(question_id)
     return HttpResponse(result)
