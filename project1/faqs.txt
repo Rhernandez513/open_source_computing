@@ -1,3 +1,16 @@
 Q. What kinds of websites can your app search?
 
 A. Reddit, Wikipedia, IMDb, Twitter
+
+Q. What is the motivation for this project?
+
+Q. How can I contribute?
+
+Q. How do I install this project?
+
+Q. What are the system requirements for this project?
+
+Q. How can I contribute i.e. what needs work?
+
+Q. How do I contribute an idea for a feature?
+
