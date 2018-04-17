@@ -50,5 +50,3 @@ o    Check box buttons for web search options.
 o    Terminal command: python manage.py runserver
 
 o    Browser entry: localhost:8000
-
-o    Search Engine: localhost:8000/wiki_results/”Search Term”
