@@ -22,9 +22,23 @@ Search was drafted up in February 2018 and uses the Mozilla public license.
 ## Requirements
  	 
 •    Python 3.6 (or later)
- 	 
+
 •    Django 2.0.1
- 	 
+
+•    Pip 9.0.1
+
+•    Pytz 2017.3
+
+•    Setuptools 38.4.0
+
+•    Wheel 0.30.0
+
+•    python-twitter 3.3
+
+•    praw 5.3.0
+
+•    wikipedia-api 0.3.4
+
 •    imdbpie 5.2.0
  	 
 ## Installation Video and Instructions
