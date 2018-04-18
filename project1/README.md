@@ -1,17 +1,16 @@
 # Open Search
 
-## Description 
+## Description & Mission Statement
 
-Open Search is a program that perform direct text search within websites though API. 
+Open Search is an open source web application geared toward simplifying, streamlining and customizing our user's web browsing needs. We believe in cutting out search engine middle-men and their targeted advertising from the online user's experience. Using popular sites' API's we have created a way to search specific sites such as Reddit, IMDb, Twitter, and Wikipedia from one location. Our simple but effective UI allows people of all computer literacy to get to the results they are looking for with little to no difficulty.
 
+## About the Open Search Foundational Team
 
-## Mission Statement
-
-Creating a search engine that directly perform full text search within web pages without going through other search engine websites.
+We are a group of five students from Loyola University Chicago taking an Open Source Computing course. Throughout the semester we have learned about how to create a successful and ethical open source project. The team is composed of students of different majors, skill levels, interests and ages; we hope as our project grows we continue to have such a diverse and passionate group. Open Search was drafted up in February 2018 and uses the Mozilla public license.
 
 ## Requirements
 
-•    Python 3.6 (or later) 
+•    Python 3.6 (or later)
 
 •    Django 2.0.1
 
@@ -31,22 +30,6 @@ Creating a search engine that directly perform full text search within web pages
 
 •    imdbpie 5.2.0
 
+## Installation Video and Instructions
 
-## Installation 
-
-o    Terminal command: Pip3 install -r requuirements.txt 
-
-## Feature List 
-
-o    Word and Phrase searching
-
-o    Webpage title searching. 
-
-o    Check box buttons for web search options.
-
-
-## Method
-
-o    Terminal command: python manage.py runserver
-
-o    Browser entry: localhost:8000
+[will be added soon!]
