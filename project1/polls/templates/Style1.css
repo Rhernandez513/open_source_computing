@@ -1,83 +1,74 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Style1.css">
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Open+Sans:600i" rel="stylesheet">
+    <title>Open Search Application</title>
+</head>
+<body>
+    <header id="title">
+        <h3>Open Search</h3>
+    </header>
+      <div id="form">
+          <form action="" method="post" id="searchBox" onsubmit="appendData(document.getElementById('searchInput').value)">{% csrf_token %}
+              Search Term: <input type="text" id="searchInput" name="search_term"><br>
+              <div id = "radio">
+                  <input type="radio" id="reddit_radio_button" name="engine_selection" value="reddit" onclick="appendFormActionIfEmpty('searchBox', 'reddit_results/');">
+                  <label for="reddit_radio_button">Reddit</label>
+                  <br>
+                  <input type="radio" id="twitter_radio_button" name="engine_selection" value="twitter" onclick="appendFormActionIfEmpty('searchBox', 'twitter_results/');">
+                  <label for="twitter_radio_button">Twitter</label>
+                  <br>
+                  <input type="radio" id="wiki_radio_button" name="engine_selection" value="wiki" onclick="appendFormActionIfEmpty('searchBox', 'wiki_results/');">
+                  <label for="twitter_radio_button">Wikipedia</label>
+                  <br>
+                  <input type="radio" id="imdb_radio_button" name="engine_selection" value="imdb" onclick="appendFormActionIfEmpty('searchBox', 'imdb_results/');">
+                  <label for="imdb_radio_button">IMDb</label>
+              </div>
+              <input type="submit" value="Submit &#x2192;">
+          </form>
+      </div>
 
-header {
-    background-color: black;
-    color: white;
-    padding: 15px;
-}
+<div id="results">
+    <p id="seachResults">Lorem ipsum dolor sit amet, invidunt adversarium cu sit, eum ad quot case detracto. Ut meis mazim has, sea eu rebum oporteat sensibus. An vim aperiam nominati. Mea te reque ullum, vix euismod voluptua te.
+        Eum ne erat nonumy aperiri, unum eripuit ne vix. Ei illud mandamus usu, ea has nullam putent intellegebat. In quando efficiendi vix. Facete nominavi reprehendunt usu ut, nam probo impetus intellegam te. In eum tation quodsi, ea qui graeci nostrum voluptatum.
+        Sea erat dicam cu. At eos vero minim. Ei est omnis euismod maiestatis. His in nibh aperiam, in nec prompta disputationi, vel et quando deseruisse. Quod principes at mei, brute clita meliore vix et. Ne aeque dissentiunt nec.
+        Et assum suscipit neglegentur qui. Ei vim tollit oporteat, et cum velit assum, pri dolor docendi assueverit ea. Dolore molestiae in sea, duo modus ridens oporteat et, eos ex falli nullam quodsi. Ex mel propriae constituto persequeris, ex quis verear sit. Sea no suas malorum noluisse, duo unum efficiendi cotidieque at, ne tempor alterum offendit eum.
+        Soluta malorum honestatis per cu, ut usu stet epicurei. Ius minim evertitur in, id case harum qui, ut lorem nihil nec. Prompta erroribus est no. Adipisci delicata id mel. Tritani sententiae an vim.
+        Constituam intellegebat reprehendunt te qui. Ex habemus deleniti incorrupte has, ad quo feugiat percipitur, quo te feugait commune voluptatibus. No omnis nonumes atomorum ius. Sea maiorum consetetur ne, wisi mundi eripuit ad usu, an mei tibique senserit. Ei quo solet prompta, sea an putant delicata definiebas.
+        His no ridens laboramus. Ut mea partiendo intellegam, ex sint labore eum, timeam epicurei ut eum. Sed ne dictas facilisi singulis, mel erant populo sadipscing at, posse virtute cu duo. Sed tempor recteque vituperata no, quo prompta perpetua accusamus in, pro ne autem dolorem.
+        Mea cu ullum civibus percipitur, quis sale cu vim. Ad illud causae appetere pro. Cu duo elaboraret delicatissimi, elit nullam theophrastus nec at, vide mollis aperiri mea id. Ut sea zril noluisse, ea veri omnis delectus usu, qui primis recteque interesset eu. Latine diceret utroque sit in, vel saepe labore eruditi et, ea eum quaeque postulant.
+        Eu novum labore recteque per. Fuisset erroribus sententiae vel at, unum corrumpit ea sea. Accusata adversarium nec ut, qui quas facete consequuntur ut. Ei illum paulo eum, pri aeque labores in, dicunt blandit torquatos est et. Ex per pericula conclusionemque, dolorem denique appareat cu mei. Et pri unum dicunt eruditi, ea qui solet epicurei.
+        Ei per quem meis honestatis, mei officiis vivendum at. In vim sumo case solum, porro commodo fastidii et quo, dico iuvaret in usu. Soleat civibus dissentiet est te. Nam ex errem ponderum constituam, ferri recteque reformidans eos eu.</p>
+</div>
 
-h3 {
-    color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 110px;
-    margin: 0px;
-    padding-bottom: 20px;
-    text-align: center;
-}
+<footer>Open Search is open source &#x2764;</footer>
 
-label{
-    font-family: 'Arimo', sans-serif;
-    font-size: 20px;
-}
+</body>
+<script>
+    function checkIfEmptyString(strValue) {
+        if(strValue) {
+            // not null
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-input[type=text] {
-    border: 1px solid black;
-    display: block;
-    font-family: 'Arimo', sans-serif;
-    font-size: 16px;
-    padding: 10px;
-    margin: 20px auto auto auto;
-    width: 90%;
-}
+    function appendFormActionIfEmpty(formID, strValue) {
+        if (checkIfEmptyString(document.getElementById(formID).action)) {
+            document.getElementById(formID).action+=strValue;
+        } else {
+            document.getElementById(formID).action=strValue;
+        }
+    }
 
-input[type=radio] {
-    height: 2em;
-    width: 2em;
-}
+    function appendData(input) {
+        // runtime error fix
+        input += '/'
+        document.getElementById('searchBox').action += input;
+    }
 
-input[type=submit] {
-    background-color: black;
-    cursor: pointer;
-    color: white;
-    display: block;
-    font-size:20px;
-    font-family: 'Arimo', sans-serif;
-    line-height: 1.2;
-    margin: auto auto 20px auto;
-    padding: 10px;
-    width: 90%;
-}
-
-p{
-    font-size: 18px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    margin: auto;
-    text-align: left;
-    width: 90%;
-}
-
-footer {
-    background-color: black;
-    color: white;
-    font-family: 'Arimo', sans-serif;
-    font-size: 12px;
-    padding: 10px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-#form, #results{
-    border: 1px solid black;
-    display: block;
-    margin: 20px auto auto auto;
-    width: 80%;
-}
-
-#radio{
-    display: block;
-    margin: auto auto 20px auto;
-    width: 90%;
-}
+</script>
+</html>
