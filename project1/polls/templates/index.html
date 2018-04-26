@@ -13,7 +13,7 @@
       <div id="form">
           <form action="" method="post" id="searchBox" onsubmit="appendData(document.getElementById('searchInput').value)">{% csrf_token %}
               Search Term: <input type="text" id="searchInput" name="search_term"><br>
-              <div>
+              <div id = "radio">
                   <input type="radio" id="reddit_radio_button" name="engine_selection" value="reddit" onclick="appendFormActionIfEmpty('searchBox', 'reddit_results/');">
                   <label for="reddit_radio_button">Reddit</label>
                   <br>
