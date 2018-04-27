@@ -4,11 +4,7 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
-<<<<<<< HEAD
  * :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
-=======
- * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -49,11 +45,7 @@ jQuery.urlencode = encodeURIComponent;
  * it will always return arrays of strings for the value parts.
  */
 jQuery.getQueryParameters = function(s) {
-<<<<<<< HEAD
   if (typeof s == 'undefined')
-=======
-  if (typeof s === 'undefined')
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
     s = document.location.search;
   var parts = s.substr(s.indexOf('?') + 1).split('&');
   var result = {};
@@ -74,7 +66,6 @@ jQuery.getQueryParameters = function(s) {
  * span elements with the given class name.
  */
 jQuery.fn.highlightText = function(text, className) {
-<<<<<<< HEAD
   function highlight(node) {
     if (node.nodeType == 3) {
       var val = node.nodeValue;
@@ -82,47 +73,15 @@ jQuery.fn.highlightText = function(text, className) {
       if (pos >= 0 && !jQuery(node.parentNode).hasClass(className)) {
         var span = document.createElement("span");
         span.className = className;
-=======
-  function highlight(node, addItems) {
-    if (node.nodeType === 3) {
-      var val = node.nodeValue;
-      var pos = val.toLowerCase().indexOf(text);
-      if (pos >= 0 && !jQuery(node.parentNode).hasClass(className)) {
-        var span;
-        var isInSVG = jQuery(node).closest("body, svg, foreignObject").is("svg");
-        if (isInSVG) {
-          span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-        } else {
-          span = document.createElement("span");
-          span.className = className;
-        }
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
         span.appendChild(document.createTextNode(val.substr(pos, text.length)));
         node.parentNode.insertBefore(span, node.parentNode.insertBefore(
           document.createTextNode(val.substr(pos + text.length)),
           node.nextSibling));
         node.nodeValue = val.substr(0, pos);
-<<<<<<< HEAD
-=======
-        if (isInSVG) {
-          var bbox = span.getBBox();
-          var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-       	  rect.x.baseVal.value = bbox.x;
-          rect.y.baseVal.value = bbox.y;
-          rect.width.baseVal.value = bbox.width;
-          rect.height.baseVal.value = bbox.height;
-          rect.setAttribute('class', className);
-          var parentOfText = node.parentNode.parentNode;
-          addItems.push({
-              "parent": node.parentNode,
-              "target": rect});
-        }
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
       }
     }
     else if (!jQuery(node).is("button, select, textarea")) {
       jQuery.each(node.childNodes, function() {
-<<<<<<< HEAD
         highlight(this);
       });
     }
@@ -130,20 +89,6 @@ jQuery.fn.highlightText = function(text, className) {
   return this.each(function() {
     highlight(this);
   });
-=======
-        highlight(this, addItems);
-      });
-    }
-  }
-  var addItems = [];
-  var result = this.each(function() {
-    highlight(this, addItems);
-  });
-  for (var i = 0; i < addItems.length; ++i) {
-    jQuery(addItems[i].parent).before(addItems[i].target);
-  }
-  return result;
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 };
 
 /*
@@ -186,35 +131,21 @@ var Documentation = {
    * i18n support
    */
   TRANSLATIONS : {},
-<<<<<<< HEAD
   PLURAL_EXPR : function(n) { return n == 1 ? 0 : 1; },
-=======
-  PLURAL_EXPR : function(n) { return n === 1 ? 0 : 1; },
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
   LOCALE : 'unknown',
 
   // gettext and ngettext don't access this so that the functions
   // can safely bound to a different name (_ = Documentation.gettext)
   gettext : function(string) {
     var translated = Documentation.TRANSLATIONS[string];
-<<<<<<< HEAD
     if (typeof translated == 'undefined')
       return string;
     return (typeof translated == 'string') ? translated : translated[0];
-=======
-    if (typeof translated === 'undefined')
-      return string;
-    return (typeof translated === 'string') ? translated : translated[0];
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
   },
 
   ngettext : function(singular, plural, n) {
     var translated = Documentation.TRANSLATIONS[singular];
-<<<<<<< HEAD
     if (typeof translated == 'undefined')
-=======
-    if (typeof translated === 'undefined')
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
       return (n == 1) ? singular : plural;
     return translated[Documentation.PLURALEXPR(n)];
   },
@@ -249,11 +180,7 @@ var Documentation = {
    * see: https://bugzilla.mozilla.org/show_bug.cgi?id=645075
    */
   fixFirefoxAnchorBug : function() {
-<<<<<<< HEAD
     if (document.location.hash)
-=======
-    if (document.location.hash && $.browser.mozilla)
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
       window.setTimeout(function() {
         document.location.href += '';
       }, 10);
@@ -289,11 +216,7 @@ var Documentation = {
       var src = $(this).attr('src');
       var idnum = $(this).attr('id').substr(7);
       $('tr.cg-' + idnum).toggle();
-<<<<<<< HEAD
       if (src.substr(-9) == 'minus.png')
-=======
-      if (src.substr(-9) === 'minus.png')
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
         $(this).attr('src', src.substr(0, src.length-9) + 'plus.png');
       else
         $(this).attr('src', src.substr(0, src.length-8) + 'minus.png');
@@ -325,11 +248,7 @@ var Documentation = {
     var path = document.location.pathname;
     var parts = path.split(/\//);
     $.each(DOCUMENTATION_OPTIONS.URL_ROOT.split(/\//), function() {
-<<<<<<< HEAD
       if (this == '..')
-=======
-      if (this === '..')
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
         parts.pop();
     });
     var url = parts.join('/');

@@ -4,11 +4,7 @@
  *
  * Sphinx stylesheet -- basic theme.
  *
-<<<<<<< HEAD
  * :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
-=======
- * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -86,27 +82,9 @@ div.sphinxsidebar input {
 }
 
 div.sphinxsidebar #searchbox input[type="text"] {
-<<<<<<< HEAD
     width: 170px;
 }
 
-=======
-    float: left;
-    width: 80%;
-    padding: 0.25em;
-    box-sizing: border-box;
-}
-
-div.sphinxsidebar #searchbox input[type="submit"] {
-    float: left;
-    width: 20%;
-    border-left: none;
-    padding: 0.25em;
-    box-sizing: border-box;
-}
-
-
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 img {
     border: 0;
     max-width: 100%;
@@ -221,14 +199,6 @@ table.modindextable td {
 
 /* -- general body styles --------------------------------------------------- */
 
-<<<<<<< HEAD
-=======
-div.body {
-    min-width: 450px;
-    max-width: 800px;
-}
-
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 div.body p, div.body dd, div.body li, div.body blockquote {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
@@ -362,14 +332,6 @@ table.docutils {
     border-collapse: collapse;
 }
 
-<<<<<<< HEAD
-=======
-table.align-center {
-    margin-left: auto;
-    margin-right: auto;
-}
-
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 table caption span.caption-number {
     font-style: italic;
 }
@@ -436,16 +398,6 @@ table.field-list td, table.field-list th {
     margin: 0;
 }
 
-<<<<<<< HEAD
-=======
-.field-name {
-    -moz-hyphens: manual;
-    -ms-hyphens: manual;
-    -webkit-hyphens: manual;
-    hyphens: manual;
-}
-
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 /* -- other body styles ----------------------------------------------------- */
 
 ol.arabic {
@@ -486,21 +438,10 @@ dd {
     margin-left: 30px;
 }
 
-<<<<<<< HEAD
 dt:target, .highlighted {
     background-color: #fbe54e;
 }
 
-=======
-dt:target, span.highlighted {
-    background-color: #fbe54e;
-}
-
-rect.highlighted {
-    fill: #fbe54e;
-}
-
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
 dl.glossary dt {
     font-weight: bold;
     font-size: 1.1em;
