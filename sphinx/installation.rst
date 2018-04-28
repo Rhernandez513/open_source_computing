@@ -1,5 +1,5 @@
-Installation 
-============
+Installation instruction
+=========================
  	 
 Download and Install Python and Pip (If you already have Python 3.6 skip to Step 2)
 

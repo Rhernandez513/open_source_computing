@@ -4,11 +4,7 @@
  *
  * Sphinx JavaScript utilities for the full-text search.
  *
-<<<<<<< HEAD
- * :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
-=======
  * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -544,12 +540,9 @@ var Search = {
           });
         } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
           var suffix = DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX;
-<<<<<<< HEAD
-=======
           if (suffix === undefined) {
             suffix = '.txt';
           }
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
           $.ajax({url: DOCUMENTATION_OPTIONS.URL_ROOT + '_sources/' + item[5] + (item[5].slice(-suffix.length) === suffix ? '' : suffix),
                   dataType: "text",
                   complete: function(jqxhr, textstatus) {

@@ -4,11 +4,7 @@
  *
  * sphinx.websupport utilities for all documentation.
  *
-<<<<<<< HEAD
- * :copyright: Copyright 2007-2016 by the Sphinx team, see AUTHORS.
-=======
  * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -305,11 +301,7 @@
     li.hide();
 
     // Determine where in the parents children list to insert this comment.
-<<<<<<< HEAD
-    for(i=0; i < siblings.length; i++) {
-=======
     for(var i=0; i < siblings.length; i++) {
->>>>>>> 883c4a9a5f273f7c4b596f896e4441b64f4a470c
       if (comp(comment, siblings[i]) <= 0) {
         $('#cd' + siblings[i].id)
           .parent()
