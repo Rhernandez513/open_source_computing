@@ -11,6 +11,8 @@ Welcome to Open Serach's documentation!
    :caption: Contents:
    
    faq
+   installation 
+  
 
 
 Indices and tables
