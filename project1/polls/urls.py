@@ -12,4 +12,5 @@ urlpatterns = [
     # ex: /polls/5/vote/
     path('wiki_results/<str:question_id>/', views.wiki_results, name='wiki_results'),
     path('imdb_results/<str:question_id>/', views.imdb_results, name='imdb_results'),
+    path('flickr_results/<str:question_id>/', views.flickr_results, name='flickr_results'),
 ]

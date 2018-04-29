@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import pprint
 
 # Create your views here.
 
@@ -9,6 +10,7 @@ from . import twitter_interface
 from . import reddit_interface
 from . import wikipedia_interface
 from . import imdb_interface
+from . import flickr_interface
 
 
 def index(request):
@@ -54,3 +56,15 @@ def imdb_results(request, question_id):
         'result' : result
     }
     return render(request, 'imdb_results.html', context)
+
+def flickr_results(request, question_id):
+    search_result = flickr_interface.flickr.photos.search(text=question_id, per_page=5,extras='url_o')
+    photos = search_result['photos']
+
+    #output formatted results to console
+    pprint.pprint(photos)
+    
+    context = {
+        'flickr_response': photos
+    }
+    return render(request, 'flickr_results.html', context)

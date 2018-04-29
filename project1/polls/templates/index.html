@@ -28,6 +28,8 @@ h3 {
 label{
     font-family: 'Arimo', sans-serif;
     font-size: 20px;
+    vertical-align: middle;
+	padding-left: 0.5em;
 }
 
 input[type=text] {
@@ -36,13 +38,14 @@ input[type=text] {
     font-family: 'Arimo', sans-serif;
     font-size: 16px;
     padding: 10px;
-    margin: 20px auto auto auto;
+    margin: auto;
     width: 90%;
 }
 
 input[type=radio] {
     height: 2em;
     width: 2em;
+	margin: 0em;
 }
 
 input[type=submit] {
@@ -60,6 +63,7 @@ input[type=submit] {
 
 p{
     font-size: 18px;
+    font-family: 'Arimo', sans-serif;
     padding-bottom: 20px;
     padding-top: 20px;
     margin: auto;
@@ -86,8 +90,14 @@ footer {
 
 #radio{
     display: block;
-    margin: 5px auto 25px;
+    margin: 25px auto 25px;
     width: 90%;
+}
+
+#radio-opt {
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 10px 10px;
 }
 
         </style>
@@ -98,19 +108,29 @@ footer {
     </header>
       <div id="form">
           <form action="" method="post" id="searchBox" onsubmit="appendData(document.getElementById('searchInput').value)">{% csrf_token %}
-              Search Term: <input type="text" id="searchInput" name="search_term" placeholder="Search...."><br>
+              <p>Search Term:</p>
+			  <input type="text" id="searchInput" name="search_term" placeholder="Search...">
               <div id = "radio">
+				<div id = "radio-opt">
                   <input type="radio" id="reddit_radio_button" name="engine_selection" value="reddit" onclick="appendFormActionIfEmpty('searchBox', 'reddit_results/');">
                   <label for="reddit_radio_button">Reddit</label>
-                  <br>
+				</div id = "radio-opt">
+				<div id = "radio-opt">
                   <input type="radio" id="twitter_radio_button" name="engine_selection" value="twitter" onclick="appendFormActionIfEmpty('searchBox', 'twitter_results/');">
                   <label for="twitter_radio_button">Twitter</label>
-                  <br>
+				</div id = "radio-opt">
+				<div id = "radio-opt">
                   <input type="radio" id="wiki_radio_button" name="engine_selection" value="wiki" onclick="appendFormActionIfEmpty('searchBox', 'wiki_results/');">
                   <label for="twitter_radio_button">Wikipedia</label>
-                  <br>
+				</div id = "radio-opt">
+				<div id = "radio-opt">
                   <input type="radio" id="imdb_radio_button" name="engine_selection" value="imdb" onclick="appendFormActionIfEmpty('searchBox', 'imdb_results/');">
                   <label for="imdb_radio_button">IMDb</label>
+				</div id = "radio-opt">
+                                <div id = "radio-opt">
+                  <input type="radio" id="flickr_radio_button" name="engine_selection" value="flickr" onclick="appendFormActionIfEmpty('searchBox', 'flickr_results/');">
+                  <label for="flickr_radio_button">Flickr</label>
+                                </div id = "radio-opt">
               </div>
               <input type="submit" value="Submit &#x2192;">
           </form>
