@@ -1,0 +1,33 @@
+INSTALL
+
+Ensure your system has the following:
+
+Python Version 3.4 or higher
+
+Untar the release
+
+```tar -xvzf open_search.tar.gz open_search```
+
+Install Pip
+
+```curl -o https://bootstrap.pypa.io/get-pip.py get-pip.py```
+
+Then install depedencies
+
+```pip install -r requirements.txt```
+
+Populate your secret.py file with the API keys you created from Twitter, Reddit, and Flickr
+
+	The file is located at ``` open_source_computing/project1/polls/secret.py ```
+
+	The API's can be found at
+``` http://apps.twitter.com/
+    https://www.reddit.com/prefs/apps
+	https://www.flickr.com/services/apps/create/apply
+```
+
+Run the code!!
+
+``` python manage.py runserver ```
+
+Your application should then be visible at localhost:8000
