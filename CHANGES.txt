@@ -1,0 +1,12 @@
+New with version 3.0
+
+- New Sphinx Documentation!
+
+	Viewable LIVE! At:  https://mohammedaseel.github.io/open_source_computing/
+
+- Flickr Integration!
+	Application now integrates with flickr and displays photo results
+
+- Minor bug fixes and enhancements
+
+- Added some bugs to fix later
